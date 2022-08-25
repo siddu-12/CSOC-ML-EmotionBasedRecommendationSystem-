@@ -1,4 +1,5 @@
-# CSOC-ML-EmotionBasedRecommendationSystem- This project basically involves detecting emotions from the video of a user using OpenCV and predicting songs from Spotify corresponding to the users mood from the emotions detected.
+# CSOC-ML-EmotionBasedRecommendationSystem 
+This project basically involves detecting emotions from the video of a user using OpenCV and predicting songs from Spotify corresponding to the users mood from the emotions detected.
 
 To predict songs based on user moods I decided to clusters my liked songs into 6 playlists corresponding to 6 emotions-"Fear,Happy,Angry,Surprised,Sad and Neutral". To do so I had to accomplish the following tasks:
 ->Acquire Data- I used data from the Spotify Dataset 1921–2020 found on Kaggle. Spotify Dataset 1921–2020 contains more than 160,000 songs collected from Spotify Web API, and also you can find data grouped by artist, year, or genre in the data section.(I have uploaded the dataset here as well for reference.) It provides a large variety of features; however, I used 8 features for describing a song i,e acousticness, danceability, liveness, energy, instrumentalness, loudness, speechiness and valence as I found them to be of more use while detecting the mood of a song.
@@ -25,8 +26,7 @@ The next half of the project involved developing a detector to determine the moo
 The program starts by taking into input the image or video that needs analysis. The FER() constructor is initialized by giving it a face detection classifier (either Open CV Haarcascade or MTCNN). We then call this constructor’s detect emotions function by passing the input object (image or video) to it. The result achieved is an array of emotions with a value mentioned against each. Finally, the ‘top_emotion’ function can seclude the highest valued emotion of the object and return it.
 
 Check out the model's output for a classic Micheal Scott gif xD.
-![happy-emotional](https://user-images.githubusercontent.com/96650742/186596589-b178e2c8-dfe7-4b11-a363-3648be831352.gif)
-![Graph](https://user-images.githubusercontent.com/96650742/186598719-3614eb21-cf2a-4c9c-8de0-7d1d5fd5d6c2.png)
+![happy-emotional](https://user-images.githubusercontent.com/96650742/186596589-b178e2c8-dfe7-4b11-a363-3648be831352.gif) ![Graph](https://user-images.githubusercontent.com/96650742/186598719-3614eb21-cf2a-4c9c-8de0-7d1d5fd5d6c2.png)
 
 Once I had obtained the emotion of the user and detected their mood I now simply had to use the Spotify API to suggest songs from the playlist I had already created corresponding to the respective mood. Here's what the model came up with for the above gif:
 ![Recommendations](https://user-images.githubusercontent.com/96650742/186599065-ed47a82a-2ce0-417c-819b-bac67df794d9.png)
